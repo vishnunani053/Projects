@@ -54,7 +54,7 @@ router.put("/:id", async (request, response) => {
   const productId = request.params.id
   console.log(productId)
   try {
-   let updateProduct = {
+    let updateProduct = {
       name: request.body.name,
       image: request.body.image,
       price: request.body.price,
@@ -76,5 +76,27 @@ router.put("/:id", async (request, response) => {
 
   }
 })
+// delete product
+router.delete("/:id", async (request, response) => {
+  try {
+    let productId = request.params.id
+    console.log(productId)
+    let product = productModel.findById(productId)
+    if (!product) {
+      return response.status(404).json({
+        msg: "no product found"
+      })
+    }
+    let delProduct =await productModel.findByIdAndDelete(productId)
+    response.status(200).json({
+      msg: "product deleted sucessfully",
+      productDetails: delProduct
+    })
+  }
+  catch (err) {
+
+  }
+})
+
 
 export default router
