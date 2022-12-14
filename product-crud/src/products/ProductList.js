@@ -12,7 +12,6 @@ const ProductList = () => {
     })
   }, [])
   return (
-    <div>
       <div className="container">
         <div className="row">
           {
@@ -39,7 +38,7 @@ const ProductList = () => {
           }
         </div>
       </div>
-    </div>
+    
   )
 }
 

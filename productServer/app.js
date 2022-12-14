@@ -33,7 +33,7 @@ mongoose.connect(mongoUrl).then((response) => {
     console.log("mongo db connected sucessfully")
 }).catch((err) => {
  console.log(err)
- process.exit(1)
+ process.exit(1)  // stop the node js process if unable to connect to mongodb
 })
 app.listen(port, () => {
     console.log(chalk.magenta(`Server is running on...http://localhost:${port}`))
