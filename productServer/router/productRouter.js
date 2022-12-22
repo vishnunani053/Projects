@@ -49,6 +49,16 @@ router.get("/all", async (request, response) => {
 
   }
 })
+//get single product
+router.get("/:id",async(req,resp)=>{
+  const productId = req.params.id
+try{
+  let product = await productModel.findById(productId)
+ 
+    resp.status(200).json(product)
+}
+catch(err){}
+})
 //update product
 router.put("/:id", async (request, response) => {
   const productId = request.params.id

@@ -26,19 +26,6 @@ const CreateProduct = () => {
   })
  }
 
-
- /* let getProducts = (event) => {
-  setProducts({ ...products, [event.target.name]: event.target.value })
- } */
- /* let submitProducts=()=>{
-  let url="http://localhost:9000/product/create"
-  Axios.post(url,products).then((respose) => {
-   setSubmitted(true)
-  }).catch((err) => {
-   
-  });
- }
-  */
  let getProducts = (event) => {
   setProducts({ ...products, [event.target.name]: event.target.value })
  }
@@ -53,7 +40,6 @@ const CreateProduct = () => {
   });
  }
  return (
-  <div>
    <div className="container mt-5">
     <div className="row">
      <pre>{JSON.stringify(submitted)}</pre>
@@ -91,7 +77,7 @@ const CreateProduct = () => {
      <pre>{JSON.stringify(products)}</pre>
     </div>
    </div>
-  </div>
+  
  )
 }
 

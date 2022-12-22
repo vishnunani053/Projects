@@ -6,18 +6,20 @@ const ProductList = () => {
   React.useEffect(() => {
     let url = "http://localhost:9000/product/all"
     Axios.get(url).then((response) => {
-      setProducts(response.data)
+      setProducts(response.data.result)
     }).catch((err) => {
 
     })
   }, [])
   return (
+    
       <div className="container">
+        <pre>{JSON.stringify(products)}</pre>
         <div className="row">
           {
-            products.length > 0 ? <>
+          products.length > 0 ? <>
               {
-                products.map((product) => {
+            products.map((product) => {
                   return <div className='col'>
                     <div className="card">
                       <div className="card-header">
