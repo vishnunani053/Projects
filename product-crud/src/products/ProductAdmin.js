@@ -45,7 +45,7 @@ const ProductAdmin = () => {
                                 products.length>0?<>
                                 {
                                     products.map((product)=>{
-                                        return <tr  style={{color:"white"}} key={product._id}>
+                                        return <tr  style={{color:"black"}} key={product._id}>
                                                <td>{product._id.slice(20,25)}</td>
                                                <td>{product.name}</td>
                                                <td>{product.price}</td>
